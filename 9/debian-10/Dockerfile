@@ -28,6 +28,7 @@ RUN /opt/bitnami/scripts/drupal/postunpack.sh
 RUN /opt/bitnami/scripts/mysql-client/postunpack.sh
 
 # by Terry
+RUN chmod g+rwX /opt/bitnami/terry/
 RUN /opt/bitnami/terry/installdrupalconsole.sh
 
 
