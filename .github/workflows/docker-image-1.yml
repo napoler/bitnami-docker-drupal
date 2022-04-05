@@ -21,7 +21,8 @@ jobs:
       run: cd ./9/debian-10/
     - name: Build the Docker image
       #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      #run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      run: docker build -t ./9/debian-10 --tag $IMAGE_NAME
     - name: Log into registry
       run: echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u napoler --password-stdin
     - name: Push image
