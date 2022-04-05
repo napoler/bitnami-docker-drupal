@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: docker build ./9/debian-10 --file Dockerfile --tag $IMAGE_NAME
+      run: docker build .--file ./9/debian-10/Dockerfile --tag $IMAGE_NAME
     - name: Log into registry
       run: echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u napoler --password-stdin
     - name: Push image
